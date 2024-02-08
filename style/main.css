@@ -11,16 +11,21 @@
 /* End Variables */
 /* Start Component */
 h2 {
-  
+  color: var(--Very-Dark-Blue);
+  letter-spacing: 1.3px;
 }
 h2 + p {
-
+  color: var(--Grayish-Blue);
 }
 /* End Component */
 /* Start Global Rules */
 ::selection {
   background-color: var(--Soft-Blue);
   color: #fff;
+}
+section {
+  padding: var(--main-sec-pad-TB) 0;
+  position: relative;
 }
 p {
   line-height: 1.6;
@@ -187,7 +192,7 @@ header nav .toggle-menu:hover span:nth-child(2) {
   }
   header nav .toggle-menu {
     position: relative;
-    z-index: 1;
+    z-index: 1111;
   }
   header nav .toggle-menu:hover + ul {
     display: flex;
@@ -256,7 +261,6 @@ header nav .toggle-menu:hover span:nth-child(2) {
 /* End Header */
 /* Start Book Manager Section  */
 section.bookmanager {
-  padding: var(--main-sec-pad-TB) 0;
   position: relative;
 }
 section.bookmanager::before {
@@ -267,8 +271,12 @@ section.bookmanager::before {
   width: 35%;
   height: 50%;
   background: var(--Soft-Blue);
-  border-radius: 500px 0 0 500px;
   z-index: -1;
+  border-radius: 500px 0 0 500px;
+  -webkit-border-radius: 500px 0 0 500px;
+  -moz-border-radius: 500px 0 0 500px;
+  -ms-border-radius: 500px 0 0 500px;
+  -o-border-radius: 500px 0 0 500px;
 }
 section.bookmanager .container {
   display: flex;
@@ -367,4 +375,123 @@ section.bookmanager .container main .btns button.firefox:hover {
     padding: 15px;
   }
 }
-/* End Book Manager Section  */
+/* End Book Manager Section */
+/* Start Features Section */
+section.features .container { 
+  text-align: center;
+}
+section.features .container ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+  position: relative;
+}
+section.features .container ul::after {
+  content: '';
+  height: 2px;
+  width: 80%;
+  background-color: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+section.features .container ul li {
+  width: 200px;
+  height: 100%;
+  padding-bottom: 30px;
+  position: relative;
+}
+section.features .container ul li.active::before {
+  content: '';
+  background-color: var(--Soft-Red);
+  width: 300px;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+section.features .container ul a {
+  color: var(--Very-Dark-Blue);
+}
+@media (max-width: 767px) {
+  section.features .container ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  section.features .container ul li {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    padding: 30px 0;
+  }
+  section.features .container ul li.active::before,
+  section.features .container ul::after {
+    display: none;
+  }
+  section.features .container li.active a {
+    color: var(--Soft-Red);
+  }
+}
+/* End Features Section */
+/* Start Simple Bookmark Section */
+section.simple-bookmark::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: left;
+  width: 35%;
+  height: 50%;
+  background: var(--Soft-Blue);
+  z-index: -1;
+  border-radius: 0 500px 500px 0;
+  -webkit-border-radius: 0 500px 500px 0;
+  -moz-border-radius: 0 500px 500px 0;
+  -ms-border-radius: 0 500px 500px 0;
+  -o-border-radius: 0 500px 500px 0;
+}
+section.simple-bookmark .container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+section.simple-bookmark .container main a {
+  background: var(--Soft-Blue);
+  color: #fff;
+  padding: 11px;
+  border-radius: 6px;
+  font-size: 16px;
+  display: block;
+  width: fit-content;
+  border: 2px solid var(--Soft-Blue);
+  transition: var(--main-duration);
+  -webkit-transition: var(--main-duration);
+  -moz-transition: var(--main-duration);
+  -ms-transition: var(--main-duration);
+  -o-transition: var(--main-duration);
+}
+section.simple-bookmark .container main a:hover {
+  color: var(--Soft-Blue);
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  section.simple-bookmark::before {
+    top: 150px;
+    width: 70vw;
+    height: 18vh;
+  }
+  section.simple-bookmark .container main a {
+    display: none;
+  }
+}
+/* End Simple Bookmark Section */
