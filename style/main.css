@@ -760,5 +760,8 @@ footer .social a:hover {
     flex-direction: column;
     text-align: center;
   }
+  footer .social {
+    text-align: center;
+  }
 }
 /* End Footer  */
